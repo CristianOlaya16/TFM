@@ -7,9 +7,15 @@
 <body>
     <h1>Registro de Tickets</h1>
     <form id="ticketForm">
-        <label>ID Ticket:</label><input type="text" id="id_ticket" name="id_ticket" readonly><br>
-        <label>ID Cliente:</label><input type="text" name="id_cliente"><br>
-        <label>Descripción de la falla:</label><input type="text" name="descripcion_falla"><br>
+        <label>ID Ticket:</label>
+        <input type="text" id="id_ticket" name="id_ticket" readonly><br>
+        
+        <label>ID Cliente:</label>
+        <input type="text" name="id_cliente"><br>
+        
+        <label>Descripción de la falla:</label>
+        <input type="text" name="descripcion_falla"><br>
+        
         <label>Siguiente Acción:</label>
         <select name="siguiente_accion">
             <option value="Relaciona con Falla">Relaciona con Falla</option>
@@ -17,6 +23,7 @@
             <option value="Relaciona con mantenimientos">Relaciona con mantenimientos</option>
             <option value="Asignar Tecnico">Asignar Técnico</option>
         </select><br>
+        
         <button type="submit">Enviar</button>
     </form>
 
