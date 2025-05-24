@@ -1,6 +1,6 @@
 const config = {
-    user: process.env.DB_USER, // Usa variables de entorno para seguridad
-    password: process.env.DB_PASSWORD,
+    user: "estudiante", // Usa variables de entorno para seguridad
+    password: "Examen@2024",
     server: "srvbigdata.database.windows.net",
     database: "TFM - TelcoMadrid",
     options: { encrypt: true }
