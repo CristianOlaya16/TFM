@@ -1,0 +1,17 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v1.1.7/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "mssql",
+    "connection-string": "Server=tcp:tu_servidor.database.windows.net,1433;Database=TFM - TelcoMadrid;User ID=tu_usuario;Password=tu_contraseña;Encrypt=true;"
+  },
+  "runtime": {
+    "rest": { "enabled": true, "path": "/rest" },
+    "graphql": { "enabled": true, "path": "/graphql" }
+  },
+  "entities": {
+    "reporte_soporte": {
+      "source": "dbo.reporte_soporte",
+      "permissions": [{ "actions": ["*"], "role": "anonymous" }]
+    }
+  }
+}
