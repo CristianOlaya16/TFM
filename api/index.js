@@ -9,15 +9,15 @@ module.exports = async function (context, req) {
         options: { encrypt: true }
     };
 
-    if (req.method === "GET") {
-        // Obtener el último ID de la base de datos
-        try {
-            await sql.connect(config);
-            const result = await sql.query`SELECT MAX(id_ticket) AS ultimo_id FROM tickets`;
-            const nuevo_id = result.recordset[0].ultimo_id + 1;
-            context.res = { body: { nuevo_id } };
-        } catch (err) {
-            context.res = { status: 500, body: err.message };
-        }
+   try {
+        await sql.connect(config);
+
+        // Obtener el último id_ticket
+        const result = await sql.query`SELECT MAX(id_ticket) AS ultimo_id FROM reporte_soporte`;
+        const nuevo_id = result.recordset[0].ultimo_id + 1;
+
+        context.res = { body: { nuevo_id } };
+    } catch (err) {
+        context.res = { status: 500, body: err.message };
     }
 };
