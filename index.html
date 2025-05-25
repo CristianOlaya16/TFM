@@ -3,171 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TelCoMadrid - Servicios de Telecomunicaciones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a2c5b2a6c1.js" crossorigin="anonymous"></script>
+  <title>TelCoMadrid - Telecomunicaciones</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: "Roboto", sans-serif;
-      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fa;
       color: #333;
     }
     header {
-      background-image: url('telcomadrid1.jpg'); /* Aquí tu primera imagen */
-      background-size: cover;
-      background-position: center;
-      padding: 5em 1em;
-      text-align: center;
-      color: white;
-    }
-    header h1 {
-      font-size: 3em;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-    nav {
-      background-color: #0078D7;
-      padding: 1em;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 1.2em;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 3em 2em;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      text-align: center;
-    }
-    .service-box {
-      flex: 1 1 250px;
-      margin: 1em;
-      padding: 1.5em;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .service-box i {
-      font-size: 2.5em;
-      color: #0078D7;
-      margin-bottom: 0.5em;
-    }
-    /* Nueva sección con imagen y texto */
-    .contact-woman {
       display: flex;
       align-items: center;
-      gap: 2em;
-      background: white;
-      border-radius: 10px;
-      padding: 2em;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 2em;
+      padding: 20px 40px;
+      background-color: #0078D7;
+      color: white;
+      gap: 20px;
+    }
+    header img {
+      height: 80px;
+      width: auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    main {
       max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    .contact-woman img {
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    section {
+      margin-bottom: 50px;
     }
-    .contact-woman div {
-      flex: 1;
+    section h2 {
+      color: #0078D7;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      border-bottom: 3px solid #0078D7;
+      padding-bottom: 5px;
+    }
+    .img-center {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
     footer {
-      background-color: #222;
-      color: white;
       text-align: center;
-      padding: 2em;
-      margin-top: 2em;
-    }
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-      .services {
-        flex-direction: column;
-      }
-      .contact-woman {
-        flex-direction: column;
-        text-align: center;
-      }
-      .contact-woman img {
-        max-width: 80%;
-      }
+      padding: 20px;
+      background-color: #0078D7;
+      color: white;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-
   <header>
+    <img src="logo.jpg" alt="Logo TelCoMadrid" />
     <h1>TelCoMadrid</h1>
-    <p>Tu conexión al futuro de las telecomunicaciones</p>
   </header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+  <main>
+    <section>
+      <h2>Servicios de Telecomunicaciones en Madrid</h2>
+      <p>En TelCoMadrid ofrecemos servicios de telecomunicaciones de alta calidad para toda la ciudad de Madrid, incluyendo cobertura para telefonía móvil, internet de alta velocidad y soluciones empresariales. Trabajamos con los mejores proveedores como Vodafone para garantizar tu conectividad.</p>
+      <img src="telcomadrid1.jpg" alt="Antenas de telecomunicaciones en Madrid" class="img-center" />
+    </section>
 
-  <section id="inicio">
-    <h2>Bienvenido a TelCoMadrid</h2>
-    <p>Somos líderes en soluciones de telecomunicaciones, ofreciendo servicios de alta calidad para empresas y particulares. Nuestra misión es conectar al mundo con tecnología moderna, confiable y segura.</p>
-  </section>
-
-  <section id="servicios">
-    <h2>Nuestros Servicios</h2>
-    <div class="services">
-      <div class="service-box">
-        <i class="fas fa-wifi"></i>
-        <h3>Internet de Alta Velocidad</h3>
-        <p>Conexiones rápidas y estables para hogares y empresas.</p>
-      </div>
-      <div class="service-box">
-        <i class="fas fa-phone-alt"></i>
-        <h3>Telefonía Móvil</h3>
-        <p>Planes adaptados a tus necesidades, cobertura nacional.</p>
-      </div>
-      <div class="service-box">
-        <i class="fas fa-tv"></i>
-        <h3>Televisión Digital</h3>
-        <p>Entretenimiento sin límites con nuestros paquetes de TV.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>📍 Madrid, España</p>
-    <p>📞 +34 912 345 678</p>
-    <p>✉️ contacto@telcomadrid.com</p>
-
-    <!-- Nueva sección con la imagen de la mujer -->
-    <div class="contact-woman">
-      <img src="telcomadrid2.jpg" alt="Mujer hablando por celular TelCoMadrid" />
-      <div>
-        <h3>¿Quieres hablar con nosotros?</h3>
-        <p>Llámanos o envíanos un correo. En TelCoMadrid estamos siempre para ayudarte.</p>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>Atención al Cliente</h2>
+      <p>¿Tienes alguna falla o consulta? Nuestro equipo de atención está listo para ayudarte. Contáctanos y resolveremos tus problemas rápidamente.</p>
+      <img src="telcomadrid2.jpg" alt="Mujer hablando por celular con logo TelCoMadrid" class="img-center" />
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 TelCoMadrid. Todos los derechos reservados.</p>
+    &copy; 2025 TelCoMadrid. Todos los derechos reservados.
   </footer>
-
 </body>
 </html>
