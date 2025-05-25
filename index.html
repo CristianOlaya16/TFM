@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TelCoMadrid - Servicios de Telecomunicaciones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a2c5b2a6c1.js" crossorigin="anonymous"></script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
     header {
-      background-image: url('https://images.unsplash.com/photo-1581092916454-5b9af3b14e44');
+      background-image: url('telcomadrid1.jpg'); /* Aquí tu primera imagen */
       background-size: cover;
       background-position: center;
       padding: 5em 1em;
@@ -23,7 +27,7 @@
     }
     header h1 {
       font-size: 3em;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     }
     nav {
       background-color: #0078D7;
@@ -53,12 +57,34 @@
       padding: 1.5em;
       background-color: white;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     .service-box i {
       font-size: 2.5em;
       color: #0078D7;
       margin-bottom: 0.5em;
+    }
+    /* Nueva sección con imagen y texto */
+    .contact-woman {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      background: white;
+      border-radius: 10px;
+      padding: 2em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-top: 2em;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-woman img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .contact-woman div {
+      flex: 1;
     }
     footer {
       background-color: #222;
@@ -68,8 +94,19 @@
       margin-top: 2em;
     }
     @media (max-width: 768px) {
-      header h1 { font-size: 2em; }
-      .services { flex-direction: column; }
+      header h1 {
+        font-size: 2em;
+      }
+      .services {
+        flex-direction: column;
+      }
+      .contact-woman {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-woman img {
+        max-width: 80%;
+      }
     }
   </style>
 </head>
@@ -117,6 +154,15 @@
     <p>📍 Madrid, España</p>
     <p>📞 +34 912 345 678</p>
     <p>✉️ contacto@telcomadrid.com</p>
+
+    <!-- Nueva sección con la imagen de la mujer -->
+    <div class="contact-woman">
+      <img src="telcomadrid2.jpg" alt="Mujer hablando por celular TelCoMadrid" />
+      <div>
+        <h3>¿Quieres hablar con nosotros?</h3>
+        <p>Llámanos o envíanos un correo. En TelCoMadrid estamos siempre para ayudarte.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
