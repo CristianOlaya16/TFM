@@ -2,40 +2,74 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TelCoMadrid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TelCoMadrid - Servicios de Telecomunicaciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2c5b2a6c1.js" crossorigin="anonymous"></script>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
+      font-family: 'Roboto', sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
     header {
-      background-color: #0078D7;
-      color: white;
-      padding: 1em;
+      background-image: url('https://images.unsplash.com/photo-1581092916454-5b9af3b14e44');
+      background-size: cover;
+      background-position: center;
+      padding: 5em 1em;
       text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     }
     nav {
-      background: #005a9e;
-      padding: 0.5em;
+      background-color: #0078D7;
+      padding: 1em;
       text-align: center;
     }
     nav a {
       color: white;
-      margin: 0 1em;
+      margin: 0 1.2em;
       text-decoration: none;
       font-weight: bold;
     }
     section {
-      padding: 2em;
+      padding: 3em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .service-box {
+      flex: 1 1 250px;
+      margin: 1em;
+      padding: 1.5em;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .service-box i {
+      font-size: 2.5em;
+      color: #0078D7;
+      margin-bottom: 0.5em;
     }
     footer {
-      background-color: #333;
+      background-color: #222;
       color: white;
       text-align: center;
-      padding: 1em;
+      padding: 2em;
+      margin-top: 2em;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2em; }
+      .services { flex-direction: column; }
     }
   </style>
 </head>
@@ -43,7 +77,7 @@
 
   <header>
     <h1>TelCoMadrid</h1>
-    <p>Soluciones en telecomunicaciones para empresas y hogares</p>
+    <p>Tu conexión al futuro de las telecomunicaciones</p>
   </header>
 
   <nav>
@@ -53,29 +87,40 @@
   </nav>
 
   <section id="inicio">
-    <h2>Bienvenidos a TelCoMadrid</h2>
-    <p>Somos una empresa innovadora en el sector de telecomunicaciones, ofreciendo servicios de internet, telefonía móvil y soluciones empresariales.</p>
+    <h2>Bienvenido a TelCoMadrid</h2>
+    <p>Somos líderes en soluciones de telecomunicaciones, ofreciendo servicios de alta calidad para empresas y particulares. Nuestra misión es conectar al mundo con tecnología moderna, confiable y segura.</p>
   </section>
 
   <section id="servicios">
     <h2>Nuestros Servicios</h2>
-    <ul>
-      <li>Internet de alta velocidad para hogares y empresas</li>
-      <li>Telefonía móvil y fija</li>
-      <li>Soluciones IoT y redes empresariales</li>
-      <li>Atención personalizada y soporte 24/7</li>
-    </ul>
+    <div class="services">
+      <div class="service-box">
+        <i class="fas fa-wifi"></i>
+        <h3>Internet de Alta Velocidad</h3>
+        <p>Conexiones rápidas y estables para hogares y empresas.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Telefonía Móvil</h3>
+        <p>Planes adaptados a tus necesidades, cobertura nacional.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-tv"></i>
+        <h3>Televisión Digital</h3>
+        <p>Entretenimiento sin límites con nuestros paquetes de TV.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>Email: contacto@telcomadrid.com</p>
-    <p>Teléfono: +34 900 123 456</p>
-    <p>Dirección: Calle de las Comunicaciones 123, Madrid, España</p>
+    <p>📍 Madrid, España</p>
+    <p>📞 +34 912 345 678</p>
+    <p>✉️ contacto@telcomadrid.com</p>
   </section>
 
   <footer>
-    &copy; 2025 TelCoMadrid. Todos los derechos reservados.
+    <p>&copy; 2025 TelCoMadrid. Todos los derechos reservados.</p>
   </footer>
 
 </body>
