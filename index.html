@@ -98,4 +98,93 @@
     footer {
       background-color: #222;
       color: white;
-      text-align: c
+      text-align: center;
+      padding: 2em;
+      margin-top: 2em;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      .services {
+        flex-direction: column;
+      }
+      .contact-woman {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-woman img {
+        max-width: 80%;
+      }
+      /* Ajustar logo en móvil */
+      header .logo {
+        position: static;
+        display: block;
+        margin: 0 auto 1em auto;
+        width: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpg" alt="TelCoMadrid Logo" class="logo" />
+    <h1>TelCoMadrid</h1>
+    <p>Tu conexión al futuro de las telecomunicaciones</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenido a TelCoMadrid</h2>
+    <p>Somos líderes en soluciones de telecomunicaciones, ofreciendo servicios de alta calidad para empresas y particulares. Nuestra misión es conectar al mundo con tecnología moderna, confiable y segura.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="services">
+      <div class="service-box">
+        <i class="fas fa-wifi"></i>
+        <h3>Internet de Alta Velocidad</h3>
+        <p>Conexiones rápidas y estables para hogares y empresas.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Telefonía Móvil</h3>
+        <p>Planes adaptados a tus necesidades, cobertura nacional.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-tv"></i>
+        <h3>Televisión Digital</h3>
+        <p>Entretenimiento sin límites con nuestros paquetes de TV.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>📍 Madrid, España</p>
+    <p>📞 +34 912 345 678</p>
+    <p>✉️ contacto@telcomadrid.com</p>
+
+    <!-- Nueva sección con la imagen de la mujer -->
+    <div class="contact-woman">
+      <img src="telcomadrid2.jpg" alt="Mujer hablando por celular TelCoMadrid" />
+      <div>
+        <h3>¿Quieres hablar con nosotros?</h3>
+        <p>Llámanos o envíanos un correo. En TelCoMadrid estamos siempre para ayudarte.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TelCoMadrid. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
