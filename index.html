@@ -19,19 +19,18 @@
     }
     header {
       position: relative;
-      background-image: url('telcomadrid1.jpg'); /* Aquí tu primera imagen */
+      background-image: url('telcomadrid1.jpg');
       background-size: cover;
       background-position: center;
       padding: 5em 1em;
       text-align: center;
       color: white;
     }
-    /* Logo en la esquina superior izquierda */
     header .logo {
       position: absolute;
       top: 15px;
       left: 15px;
-      width: 100px; /* Ajusta el tamaño que prefieras */
+      width: 100px;
       height: auto;
     }
     header h1 {
@@ -73,7 +72,6 @@
       color: #0078D7;
       margin-bottom: 0.5em;
     }
-    /* Nueva sección con imagen y texto */
     .contact-woman {
       display: flex;
       align-items: center;
@@ -95,7 +93,13 @@
     .contact-woman div {
       flex: 1;
     }
-    /* Estilos del formulario */
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 2em;
+      margin-top: 2em;
+    }
     form {
       background: white;
       padding: 2em;
@@ -103,36 +107,31 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       max-width: 600px;
       margin: 2em auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
     }
     form input, form textarea {
-      width: 100%;
-      padding: 0.8em;
-      margin-bottom: 1em;
+      padding: 0.75em;
+      font-size: 1em;
       border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 1em;
-      font-family: inherit;
+      width: 100%;
+      font-family: "Roboto", sans-serif;
     }
     form button {
       background-color: #0078D7;
       color: white;
       border: none;
-      padding: 1em 2em;
+      padding: 1em;
       font-size: 1.1em;
+      font-weight: bold;
       border-radius: 5px;
       cursor: pointer;
-      font-weight: bold;
       transition: background-color 0.3s ease;
     }
     form button:hover {
       background-color: #005fa3;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 2em;
-      margin-top: 2em;
     }
     @media (max-width: 768px) {
       header h1 {
@@ -148,12 +147,15 @@
       .contact-woman img {
         max-width: 80%;
       }
-      /* Ajustar logo en móvil */
       header .logo {
         position: static;
         display: block;
         margin: 0 auto 1em auto;
         width: 80px;
+      }
+      form {
+        width: 90%;
+        padding: 1em;
       }
     }
   </style>
@@ -203,10 +205,10 @@
 
     <form id="contactForm">
       <input type="text" name="dni" placeholder="DNI" required />
-      <input type="text" name="nombre" placeholder="Nombre" required />
-      <input type="text" name="apellido" placeholder="Apellido" required />
+      <input type="text" name="nombre" placeholder="Nombre (sin espacios)" required />
+      <input type="text" name="apellido" placeholder="Apellido (sin espacios)" required />
       <input type="email" name="correo" placeholder="Correo" required />
-      <input type="tel" name="telefono" placeholder="Teléfono" required />
+      <input type="tel" name="telefono" placeholder="Teléfono (9 dígitos)" required />
       <input type="text" name="direccion" placeholder="Dirección" required />
       <input type="text" name="tipo_de_consulta" placeholder="Tipo de Consulta" required />
       <textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
@@ -218,7 +220,6 @@
     <p>✉️ contacto@telcomadrid.com</p>
     <p>📨 Para contacto <a href="https://purple-beach-03622cd03.6.azurestaticapps.net" target="_blank">selecciona aquí</a></p>
 
-    <!-- Nueva sección con la imagen de la mujer -->
     <div class="contact-woman">
       <img src="telcomadrid2.jpg" alt="Mujer hablando por celular TelCoMadrid" />
       <div>
@@ -237,33 +238,58 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      const nombre = form.nombre.value.trim();
+      const apellido = form.apellido.value.trim();
+      const telefono = form.telefono.value.trim();
+
+      // Validar que nombre y apellido no tengan espacios
+      if (/\s/.test(nombre)) {
+        alert('El campo Nombre no puede contener espacios.');
+        form.nombre.focus();
+        return;
+      }
+
+      if (/\s/.test(apellido)) {
+        alert('El campo Apellido no puede contener espacios.');
+        form.apellido.focus();
+        return;
+      }
+
+      // Validar teléfono que tenga exactamente 9 caracteres y solo números
+      if (!/^\d{9}$/.test(telefono)) {
+        alert('El campo Teléfono debe contener exactamente 9 números sin espacios ni otros caracteres.');
+        form.telefono.focus();
+        return;
+      }
+
       const data = {
-        dni: form.dni.value,
-        nombre: form.nombre.value,
-        apellido: form.apellido.value,
-        correo: form.correo.value,
-        telefono: form.telefono.value,
-        direccion: form.direccion.value,
-        tipo_de_consulta: form.tipo_de_consulta.value,
-        mensaje: form.mensaje.value
+        dni: form.dni.value.trim(),
+        nombre,
+        apellido,
+        correo: form.correo.value.trim(),
+        telefono,
+        direccion: form.direccion.value.trim(),
+        tipo_de_consulta: form.tipo_de_consulta.value.trim(),
+        mensaje: form.mensaje.value.trim()
       };
 
       try {
-        const response = await fetch('TU_ENDPOINT_DE_LA_LOGIC_APP', {
+        const response = await fetch('https://prod-00.westeurope.logic.azure.com:443/workflows/2b8d5ee66a9b4a35868b6db823f7d2b0/triggers/manual/paths/invoke/rest/v1/consultas?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Sp3PV09_l5yQ6H1hTfwLHYcGBXmUACUSwyj4gEiut5s', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(data)
         });
+
         if (response.ok) {
-          alert('Mensaje enviado correctamente.');
+          alert('Formulario enviado correctamente. ¡Gracias!');
           form.reset();
         } else {
-          alert('Error al enviar el mensaje.');
+          alert('Error al enviar el formulario. Por favor intenta nuevamente.');
         }
       } catch (error) {
-        alert('Error en la conexión.');
+        alert('Error de red. Por favor verifica tu conexión e intenta de nuevo.');
         console.error(error);
       }
     });
