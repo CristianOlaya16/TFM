@@ -7,11 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a2c5b2a6c1.js" crossorigin="anonymous"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Roboto", sans-serif;
       background-color: #f4f4f4;
@@ -90,9 +86,7 @@
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
-    .contact-woman div {
-      flex: 1;
-    }
+    .contact-woman div { flex: 1; }
     footer {
       background-color: #222;
       color: white;
@@ -134,19 +128,13 @@
       background-color: #005fa3;
     }
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-      .services {
-        flex-direction: column;
-      }
+      header h1 { font-size: 2em; }
+      .services { flex-direction: column; }
       .contact-woman {
         flex-direction: column;
         text-align: center;
       }
-      .contact-woman img {
-        max-width: 80%;
-      }
+      .contact-woman img { max-width: 80%; }
       header .logo {
         position: static;
         display: block;
@@ -229,6 +217,20 @@
     </div>
   </section>
 
+  <!-- Bot/avatar D-ID -->
+  <section id="asistente-virtual" style="text-align:center; padding: 2em;">
+    <h2>Asistente Virtual TelCoMadrid</h2>
+    <p>Habla con nuestro agente digital para resolver tus dudas al instante.</p>
+    <iframe 
+      src="https://studio.d-id.com/agents/share?id=v2_agt_eD1kwRuZ&utm_source=copy&key=WVhWMGFEQjhOamcwWXpVNVpEVTFaalppWldVM1l6YzFOV1kwWm1VeE9ubExWVlZzZFc5elpFZFRkRmwxUlZoSlEweExSQT09"  
+      width="400" 
+      height="600" 
+      frameborder="0"
+      allow="camera; microphone; autoplay; encrypted-media;" 
+      allowfullscreen>
+    </iframe>
+  </section>
+
   <footer>
     <p>&copy; 2025 TelCoMadrid. Todos los derechos reservados.</p>
   </footer>
@@ -242,20 +244,16 @@
       const apellido = form.apellido.value.trim();
       const telefono = form.telefono.value.trim();
 
-      // Validar que nombre y apellido no tengan espacios
       if (/\s/.test(nombre)) {
         alert('El campo Nombre no puede contener espacios.');
         form.nombre.focus();
         return;
       }
-
       if (/\s/.test(apellido)) {
         alert('El campo Apellido no puede contener espacios.');
         form.apellido.focus();
         return;
       }
-
-      // Validar teléfono que tenga exactamente 9 caracteres y solo números
       if (!/^\d{9}$/.test(telefono)) {
         alert('El campo Teléfono debe contener exactamente 9 números sin espacios ni otros caracteres.');
         form.telefono.focus();
@@ -276,9 +274,7 @@
       try {
         const response = await fetch('https://prod-00.westeurope.logic.azure.com:443/workflows/2b8d5ee66a9b4a35868b6db823f7d2b0/triggers/manual/paths/invoke/rest/v1/consultas?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Sp3PV09_l5yQ6H1hTfwLHYcGBXmUACUSwyj4gEiut5s', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
 
